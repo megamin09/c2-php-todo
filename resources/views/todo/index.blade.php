@@ -25,9 +25,9 @@
             <tbody>
             @foreach($todo_list as $todo)
                 <tr>
-                    <td >
+                    <td>
                         <a href="/todo/{{ $todo->id }}">
-                            {{ $todo->title  }}
+                            {{ $todo->title }}
                         </a>
                     </td>
                     <td>{{ $todo->due_date }}</td>
@@ -35,6 +35,7 @@
             @endforeach
             </tbody>
         </table>
+        {{ $todo_list->links() }}
     </div>
 </div>
 
