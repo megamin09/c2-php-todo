@@ -6,7 +6,7 @@
           integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" href="https://npmcdn.com/flatpickr/dist/themes/material_blue.css">
-    <title>TODO App</title>
+    <title>{{ $todo->title }} | TODO App</title>
 </head>
 <body>
 
@@ -14,7 +14,7 @@
     <div class="col-md-12">
         <h1 class="text-center text-primary py-3">TODO App</h1>
 
-        <h2 class="text-muted py-3">やること一覧</h2>
+        <h2 class="text-muted py-3">{{ $todo->title }}</h2>
         <table class="table">
             <thead>
             <tr>
@@ -23,18 +23,13 @@
             </tr>
             </thead>
             <tbody>
-            @foreach($todo_list as $todo)
-                <tr>
-                    <td >
-                        <a href="/todo/{{ $todo->id }}">
-                            {{ $todo->title  }}
-                        </a>
-                    </td>
-                    <td>{{ $todo->due_date }}</td>
-                </tr>
-            @endforeach
+            <tr>
+                <td  style="width: 300px">{{ $todo->title }}</td>
+                <td>{{ $todo->due_date }}</td>
+            </tr>
             </tbody>
         </table>
+        <button class="btn btn-primary" type="button" onclick="history.back()">戻る</button>
     </div>
 </div>
 
@@ -47,6 +42,6 @@
 </script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
-  </script>
+</script>
 </body>
 </html>

@@ -47,7 +47,7 @@ class TodoController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('todo/show', ['todo' => Todo::findOrFail($id)]);
     }
 
     /**
