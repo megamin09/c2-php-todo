@@ -29,6 +29,7 @@ class TodoController extends Controller
     public function create()
     {
         //
+        echo 'さば';
     }
 
     /**
