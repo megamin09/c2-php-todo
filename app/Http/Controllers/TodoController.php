@@ -50,7 +50,7 @@ class TodoController extends Controller
      */
     public function show(int $id)
     {
-        return view('todo/show', ['todo' => Todo::findOrFail($id)]);
+        return view('todo/show', ['todo' => Auth::user()->todos()->findOrFail($id)]);
     }
 
     /**
