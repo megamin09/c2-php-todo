@@ -36,7 +36,7 @@
         </div>
         <br>
         <div>
-            <input class="btn btn-primary"  type="submit" name="btn" value="<　戻る">
+        @include('parts.button.back')
         </div>
 
     </div>

@@ -13,8 +13,10 @@
 <div class="container">
     <div class="col-md-12">
         <h1 class="text-center text-primary py-3">TODO App</h1>
-        <input class="btn btn-primary"  type="submit" name="btn" value="✙ 新規作成">
-        <h2 class="text-muted py-3">やること一覧</h2>
+        <h2 class="text-muted py-3 float-left">やること一覧</h2>
+        <div class="float-right my-3">
+            <a href="/todo/create/" class="btn btn-primary"><i class="fas fa-plus mr-2"></i>新規作成</a>
+        </div>
         <table class="table">
             <thead>
             <tr>
