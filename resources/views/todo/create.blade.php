@@ -13,29 +13,32 @@
 <div class="container">
     <div class="col-md-12">
         <h1 class="text-center text-primary py-3">TODO App</h1>
-        <input class="btn btn-primary"  type="submit" name="btn" value="✙ 新規作成">
-        <h2 class="text-muted py-3">やること一覧</h2>
-        <table class="table">
-            <thead>
-            <tr>
-                <th>タイトル</th>
-                <th>期限</th>
-            </tr>
-            </thead>
-            <tbody>
-            @foreach($todo_list as $todo)
-                <tr>
-                    <td>
-                        <a href="/todo/{{ $todo->id }}">
-                            {{ $todo->title }}
-                        </a>
-                    </td>
-                    <td>{{ $todo->due_date }}</td>
-                </tr>
-            @endforeach
-            </tbody>
-        </table>
-        {{ $todo_list->links() }}
+        <h2 class="text-muted py-3">Todo作成</h2>
+        
+        <div class="form-group">
+            <label for="title">タスク名</label>
+            <input type="text" class="form-control" name="title" id="title" placeholder="タスク名" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="due_date">期限</label>
+            <input type="text" class="form-control" name="due_date" id="due_date" placeholder="年/月/日" equired>
+        
+        </div>
+            
+        <div class = "form-group">
+            <label for="exeample">アップロード画像</label>
+            <input type="file" class = "form-control" name="image">
+        </div>
+        <br>
+        <div>
+            <input class="btn btn-primary"  type="submit" name="btn" value="作成">
+        </div>
+        <br>
+        <div>
+            <input class="btn btn-primary"  type="submit" name="btn" value="<　戻る">
+        </div>
+
     </div>
 </div>
 
