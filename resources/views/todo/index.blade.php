@@ -4,6 +4,22 @@
     <div class="container">
         <div class="col-md-10">
             <h2 class="text-muted py-3 float-left">やること一覧</h2>
+            <h3> <script>
+            //今日の日付データを変数に格納
+            //変数は"today"とする
+            var today=new Date(); 
+
+            //年・月・日・曜日を取得
+            var year = today.getFullYear();
+            var month = today.getMonth()+1;
+            var week = today.getDay();
+            var day = today.getDate();
+
+            var week_ja= new Array("日","月","火","水","木","金","土");
+
+            //年・月・日・曜日を書き出す
+            document.write( "　　　　　　　　　　　　　　　　　　" + year+"年"+month+"月"+day+"日 "+week_ja[week]+"曜日");
+             </script> </h3>
             <div class="float-right my-3">
                 <a href="/todo/create/" class="btn btn-primary"><i class="fas fa-plus mr-2"></i>新規作成</a>
             </div>
