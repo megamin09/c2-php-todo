@@ -12,9 +12,9 @@
                 <tr>
                     <th width="40%">タイトル</th>
                     <th width="20%">期限</th>
-                    <th width="10%">状態</th>
-                    <th width="15%"></th>
-                    <th width="15%"></th>
+                    <th width="12%">状態</th>
+                    <th width="11%"></th>
+                    <th width="11%"></th>
                 </tr>
                 </thead>
                 <tbody>

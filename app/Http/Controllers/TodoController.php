@@ -104,6 +104,7 @@ class TodoController extends Controller
         $todo->delete();
 
         $todo_list = Auth::user()->todos()->paginate(self::PAGE_SIZE);
-        return view('todo/index', comact('todo_list'));
+        // return view('todo/index', comact('todo_list'));
+        return redirect()->to('/todo');
     }
 }
