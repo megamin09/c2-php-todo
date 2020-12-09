@@ -15,6 +15,9 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+                    <div>
+                       <a href="/todo" class="btn btn-primary">Todo一覧へ</a>
+                    </div>
                 </div>
             </div>
         </div>

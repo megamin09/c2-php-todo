@@ -1,4 +1,5 @@
 <?php
+
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -10,8 +11,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-         // TODO: UserSeederをTodoTableSeederに変更する 
-         // $this->call(UserSeeder::class);
-         $this->call(TodoTableSeeder::class);
+        $this->call(UserTableSeeder::class);
+        $this->call(TodoTableSeeder::class);
     }
 }

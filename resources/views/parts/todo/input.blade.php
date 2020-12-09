@@ -1,33 +1,33 @@
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-    <link rel="stylesheet" href="https://npmcdn.com/flatpickr/dist/themes/material_blue.css">
-    <title>TODO App</title>
-</head>
-<body>
-
 <div class="form-group">
     <label for="title">タスク名</label>
-    <input type="text" class="form-control" name="title" placeholder="ゴミ出し" required>
+    <input type="text" class="form-control" name="title" placeholder="ゴミ出し" value="{{ $todo && $todo->title ? $todo->title: '' }}" required>
 </div>
 <div class="form-group">
     <label for="due_date">期限</label>
-    <input type="date" class="form-control" name="due_date" placeholder="2020/10/31" required>
+    <input type="date" class="form-control" name="due_date" placeholder="2020-10-31" value="{{ $todo && $todo->due_date ? $todo->due_date: '' }}" required>
 </div>
-<input type="hidden" name="_token" value="{{ csrf_token() }}"> 
 
-<!-- JS, Popper.js, and jQuery -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-</script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-</script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
-  </script>
-</body>
+@if( $todo )
+    <div class = "form-group">
+        <label for="status">状態</label>
+        <select name = "status" id = "status" class = "form-control" >
+            @foreach(\App\Todo::STATUS as $key => $val)
+                <option 
+                        value="{{ $key }}"
+                        {{ $key == old( 'status', '$todo->status' ) ? 'selected' : '' }}
+                >
+                {{ $val }}
+            @endforeach
+        </select>
+    </div>
+@endif
+@csrf
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
