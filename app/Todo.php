@@ -24,6 +24,12 @@ class Todo extends Model
         return self::STATUS[$this->status];
     }
 
+    public function getDisplayDate(): string
+    {
+        $times = strtotime( $this->due_date );
+        return date( "Y年m月d日", $times );
+    }
+
 }
 
 

@@ -18,8 +18,10 @@
             var week_ja= new Array("日","月","火","水","木","金","土");
 
             //年・月・日・曜日を書き出す
-            document.write( "　　　　　　　　　　　　　　　　　　" + year+"年"+month+"月"+day+"日 "+week_ja[week]+"曜日");
+            document.write( "　　　　　　　　　　　　　　　　　" + year+"年"+month+"月"+day+"日 "+week_ja[week]+"曜日");
              </script> </h3>
+
+
             <div class="float-right my-3">
                 <a href="/todo/create/" class="btn btn-primary"><i class="fas fa-plus mr-2"></i>新規作成</a>
             </div>
@@ -41,7 +43,7 @@
                                 {{ $todo->title }}
                             </a>
                         </td>
-                        <td>{{ $todo->due_date }}</td>
+                        <td>{{ $todo->getDisplayDate() }}</td>
 
                         <td>{{$todo->getStatusText()}}</td>
 
